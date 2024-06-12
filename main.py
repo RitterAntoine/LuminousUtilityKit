@@ -5,6 +5,8 @@
 import sys
 import printer
 from printer import *
+import convertions
+from convertions import *
 
 # main function
 def main():
@@ -16,6 +18,14 @@ def main():
         printer.hello_world()
     elif args[1] == "hello_name":
         printer.hello_name(args[2])
+    elif args[1] == "convert":
+        value = float(args[2])
+        unit_1 = args[3]
+        unit_2 = args[4]
+        if unit_1 == "km" and unit_2 == "miles":
+            print(value, "km is equal to", convert_km_to_miles(value), "miles")
+        elif unit_1 == "miles" and unit_2 == "km":
+            print(value, "miles is equal to", convert_miles_to_km(value), "km")
 
 if __name__ == "__main__":
     main()
