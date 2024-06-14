@@ -3,29 +3,57 @@
 # python main.py <function_name> <arguments>
 
 import sys
-import printer
-from printer import *
-import convertions
-from convertions import *
+from src.printer import *
+from src.convertions import *
+from src.simulation.simulation import simulation
+
+# List of functions that can be called
+functions = {
+    "print": ["hello_world", "hello", "print"],
+    "convert": ["convert"],
+    "simulation": ["simulation"]
+}
+
+def print_categories(args):
+    if args[1] == functions["print"][0]:
+        hello_world()
+    elif args[1] == functions["print"][1]:
+        hello(args[2])
+    elif args[1] == functions["print"][2]:
+        print(args[2])
+
+def convertions_categories(args):
+    value = float(args[2])
+    from_unit = args[3]
+    to_unit = args[4]
+
+    try:
+        result = convert(value, from_unit, to_unit)
+        print(f"{value} {from_unit} is equal to {result} {to_unit}")
+    except ValueError as e:
+        print(e)
+
+def evolution_categories(args):
+    if args[1] == functions["simulation"][0]:
+        simulation()
 
 # main function
 def main():
     # Get all the arguments passed to the script
     args = sys.argv
 
-    # Check if the first argument is the name of the function to be called
-    if args[1] == "hello_world":
-        printer.hello_world()
-    elif args[1] == "hello_name":
-        printer.hello_name(args[2])
-    elif args[1] == "convert":
-        value = float(args[2])
-        unit_1 = args[3]
-        unit_2 = args[4]
-        if unit_1 == "km" and unit_2 == "miles":
-            print(value, "km is equal to", convert_km_to_miles(value), "miles")
-        elif unit_1 == "miles" and unit_2 == "km":
-            print(value, "miles is equal to", convert_miles_to_km(value), "km")
+    if len(args) == 1:
+        help()
+        return
+    
+    function_name = args[1]
+    
+    if function_name in functions["print"]:
+        print_categories(args)
+    elif function_name in functions["convert"]:
+        convertions_categories(args)
+    elif function_name in functions["simulation"]:
+        evolution_categories(args)
 
 if __name__ == "__main__":
     main()
