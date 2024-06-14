@@ -4,7 +4,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1"
 import pygame
 import sys
 from random import randint
-from src.simulation.bacteria import Bacteria
+from LuminousUtilityKit.src.simulation.bacteria import Bacteria
 
 def simulation():
     pygame.init()

@@ -1,1 +1,3 @@
 # LuminousUtilityKit
+
+pip install -e .

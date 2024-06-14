@@ -1,11 +1,7 @@
-# The goal of this project is to develop a bunch of functions that will be called in a terminal
-# The functions will be called with the following syntax:
-# python main.py <function_name> <arguments>
-
 import sys
-from src.printer import *
-from src.convertions import *
-from src.simulation.simulation import simulation
+from LuminousUtilityKit.src.printer import *
+from LuminousUtilityKit.src.convertions import *
+from LuminousUtilityKit.src.simulation.simulation import simulation
 
 # List of functions that can be called
 functions = {
