@@ -16,4 +16,5 @@ def help():
     print("hello <name>")
     print("print <message>")
     print("convert <value> <unit_1> <unit_2>")
-    print("simulation")
+    print("bacteria_simulation")
+    print("life_simulation")

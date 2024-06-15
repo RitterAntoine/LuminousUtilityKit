@@ -4,9 +4,9 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "1"
 import pygame
 import sys
 from random import randint
-from LuminousUtilityKit.src.simulation.bacteria import Bacteria
+from LuminousUtilityKit.src.simulation.bacteria.bacteria import Bacteria
 
-def simulation():
+def bacteria_simulation():
     pygame.init()
 
     screen = pygame.display.set_mode((1000, 800))
@@ -39,4 +39,4 @@ def simulation():
         clock.tick(20)
 
 if __name__ == "__main__":
-    simulation()
+    bacteria_simulation()

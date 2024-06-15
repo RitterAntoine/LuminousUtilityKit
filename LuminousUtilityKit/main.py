@@ -1,13 +1,14 @@
 import sys
 from LuminousUtilityKit.src.printer import *
 from LuminousUtilityKit.src.convertions import *
-from LuminousUtilityKit.src.simulation.simulation import simulation
+from LuminousUtilityKit.src.simulation.bacteria.simulation import bacteria_simulation
+from LuminousUtilityKit.src.simulation.life.life import life_simulation
 
 # List of functions that can be called
 functions = {
     "print": ["hello_world", "hello", "print"],
     "convert": ["convert"],
-    "simulation": ["simulation"]
+    "simulation": ["bacteria_simulation", "life_simulation"]
 }
 
 def print_categories(args):
@@ -29,9 +30,11 @@ def convertions_categories(args):
     except ValueError as e:
         print(e)
 
-def evolution_categories(args):
+def simulation_categories(args):
     if args[1] == functions["simulation"][0]:
-        simulation()
+        bacteria_simulation()
+    elif args[1] == functions["simulation"][1]:
+        life_simulation()
 
 # main function
 def main():
@@ -49,7 +52,7 @@ def main():
     elif function_name in functions["convert"]:
         convertions_categories(args)
     elif function_name in functions["simulation"]:
-        evolution_categories(args)
+        simulation_categories(args)
 
 if __name__ == "__main__":
     main()
