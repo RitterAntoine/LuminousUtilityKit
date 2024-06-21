@@ -17,7 +17,7 @@ The Luminous Utility Kit is a Python library designed to offer a variety of util
 To use the Luminous Utility Kit, you need to clone the repository and ensure you have Python installed.
 
 ```sh
-git clone https://github.com/yourusername/LuminousUtilityKit.git
+git clone https://github.com/RitterAntoine/LuminousUtilityKit.git
 cd LuminousUtilityKit
 ```
 Make sure to install any required dependencies (if any) mentioned in the `requirements.txt` file.
