@@ -12,7 +12,7 @@ class Bacteria:
 
     def attract(self, other_bacteria):
         distance = math.hypot(self.x - other_bacteria.x, self.y - other_bacteria.y)
-        force = 10 / distance  # Attraction
+        force = 10 / distance
         force_repulsion = -1 / distance
 
         alpha = math.atan2(other_bacteria.y - self.y, other_bacteria.x - self.x)

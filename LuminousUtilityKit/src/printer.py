@@ -6,11 +6,15 @@ def hello_world():
 def hello(name):
     print(f"Hello, {name}!")
 
+def welcome():
+    print("Welcome to the Luminous Utility Kit!")
+    print("Type 'LuminousUtilityKit.exe help' to see the available functions")
+
 def help():
     print("")
     print("The goal of this project is to develop a bunch of functions that will be called in a terminal")
     print("The functions will be called with the following syntax:")
-    print("python main.py <function_name> <arguments>")
+    print("LuminousUtilityKit.exe <function_name> <arguments>")
     print("The following functions are available:")
     print("hello_world")
     print("hello <name>")

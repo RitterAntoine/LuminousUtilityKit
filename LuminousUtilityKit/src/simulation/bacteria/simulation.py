@@ -12,7 +12,6 @@ def bacteria_simulation():
     screen = pygame.display.set_mode((1000, 800))
     clock = pygame.time.Clock()
 
-    # Create several instances of the Bacteria class in a list
     num_bacteria = 10
     radius = 10
     bacteria_list = [

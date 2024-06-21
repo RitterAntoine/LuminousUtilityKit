@@ -6,7 +6,7 @@ from LuminousUtilityKit.src.simulation.life.life import life_simulation
 
 # List of functions that can be called
 functions = {
-    "print": ["hello_world", "hello", "print"],
+    "print": ["hello_world", "hello", "print", "welcome", "help"],
     "convert": ["convert"],
     "simulation": ["bacteria_simulation", "life_simulation"]
 }
@@ -18,6 +18,10 @@ def print_categories(args):
         hello(args[2])
     elif args[1] == functions["print"][2]:
         print(args[2])
+    elif args[1] == functions["print"][3]:
+        welcome()
+    elif args[1] == functions["print"][4]:
+        help()
 
 def convertions_categories(args):
     value = float(args[2])
@@ -36,13 +40,11 @@ def simulation_categories(args):
     elif args[1] == functions["simulation"][1]:
         life_simulation()
 
-# main function
 def main():
-    # Get all the arguments passed to the script
     args = sys.argv
 
     if len(args) == 1:
-        help()
+        welcome()
         return
     
     function_name = args[1]
